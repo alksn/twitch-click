@@ -1,0 +1,43 @@
+$("#buttonID").click();
+$(".tw-button--success").click();
+
+// это зависает
+function wait(ms) {
+    var start = Date.now(),
+        now = start;
+    while (now - start < ms) {
+      now = Date.now();
+    }
+}
+
+// это работает
+function wait(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Done waiting");
+      resolve(ms)
+    }, ms )
+  })
+} 
+function foo() {
+    //$(".tw-button--success").click();
+    //document.getElementsByClassName("tw-button--success")[0].click();
+    var i = document.getElementsByClassName("tw-button--success")[0];
+    if (i != undefined) {i.click(); console.log(i);}
+    //console.log(i);
+}
+var i;
+for (i = 0; i < 360; i++) {
+  foo();
+  await wait(10000);
+} 
+
+
+// не тестировалось
+setTimeout(function(){
+  $(".tw-button--success").trigger('click');
+}, 1000);
+
+
+Источник:
+https://stackoverflow.com/questions/6921895/synchronous-delay-in-code-execution
