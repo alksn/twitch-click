@@ -1,3 +1,22 @@
+
+
+new sources 2021
+
+
+Источники:
+console.log(document.querySelectorAll("button[aria-label='Получить бонус']").length) - working
+console.log(document.querySelectorAll("button[aria-label~='бонус']").length)
+console.log(document.querySelectorAll("[class*='ScCoreButtonSuccess-sc-']").length)
+
+https://www.w3schools.com/jsref/met_document_queryselector.asp
+https://www.w3schools.com/cssref/css_selectors.asp
+
+
+
+----------
+old sources 2020
+
+
 $("#buttonID").click();
 $(".tw-button--success").click();
 
